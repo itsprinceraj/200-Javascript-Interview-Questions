@@ -2589,5 +2589,4 @@ console.log([{}] + []);
 
 ---
 
-Let me know if you'd like to discuss any of these in detail!
  
