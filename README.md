@@ -19,7 +19,7 @@ console.log(typeof null);
 ### **2. What is the output of this?**
 
 ```js
-console.log(1 + '2' + '2');
+console.log(1 + "2" + "2");
 ```
 
 **Output**: `"122"`
@@ -31,7 +31,7 @@ console.log(1 + '2' + '2');
 ### **3. What is the output?**
 
 ```js
-console.log('1' - 1);
+console.log("1" - 1);
 ```
 
 **Output**: `0`
@@ -84,10 +84,12 @@ console.log({} + []);
 ```
 
 **Output**:
+
 - First: `"[object Object]"`
 - Second: `0`
 
-**Explanation**: 
+**Explanation**:
+
 - `[] + {}`: Array gets converted to an empty string, and object gets converted to `'[object Object]'`, so the result is `"[object Object]"`.
 - `{}` is interpreted as a block, and `+[]` results in `0`.
 
@@ -96,7 +98,7 @@ console.log({} + []);
 ### **8. What’s the output?**
 
 ```js
-console.log(1 + + '2');
+console.log(1 + +"2");
 ```
 
 **Output**: `3`
@@ -139,7 +141,8 @@ console.log(!!"");
 console.log(!!1);
 ```
 
-**Output**: 
+**Output**:
+
 - `false`
 - `false`
 - `true`
@@ -165,7 +168,7 @@ console.log(typeof NaN);
 ```js
 let a = 1;
 let b = 2;
-console.log(a = b);
+console.log((a = b));
 ```
 
 **Output**: `2`
@@ -181,7 +184,8 @@ console.log([] == []);
 console.log({} == {});
 ```
 
-**Output**: 
+**Output**:
+
 - `false`
 - `false`
 
@@ -219,7 +223,7 @@ console.log([] == ![]);
 ### **17. What’s the output of this?**
 
 ```js
-console.log(typeof function(){});
+console.log(typeof function () {});
 ```
 
 **Output**: `"function"`
@@ -237,7 +241,8 @@ console.log(a);
 console.log(a.length);
 ```
 
-**Output**: 
+**Output**:
+
 - `[1, empty, 3]`
 - `3`
 
@@ -249,15 +254,17 @@ console.log(a.length);
 
 ```js
 let a = 5;
-console.log(a++); 
+console.log(a++);
 console.log(++a);
 ```
 
-**Output**: 
+**Output**:
+
 - `5`
 - `7`
 
 **Explanation**:
+
 - `a++` returns the current value (`5`), then increments `a` to `6`.
 - `++a` increments `a` first (`7`), then returns it.
 
@@ -271,7 +278,8 @@ console.log(typeof typeof 1);
 
 **Output**: `"string"`
 
-**Explanation**: 
+**Explanation**:
+
 - `typeof 1` returns `"number"`.
 - `typeof "number"` returns `"string"` because `"number"` is a string.
 
@@ -322,6 +330,7 @@ console.log(a);
 ```
 
 **Output**:
+
 - `0`
 - `1`
 
@@ -356,7 +365,7 @@ console.log({} + {});
 ### **27. What will this log?**
 
 ```js
-console.log(3 + '3' - '3');
+console.log(3 + "3" - "3");
 ```
 
 **Output**: `30`
@@ -368,21 +377,21 @@ console.log(3 + '3' - '3');
 ### **28. What does this return?**
 
 ```js
-console.log(true == '1');
+console.log(true == "1");
 ```
 
 **Output**: `true`
 
 **Explanation**: The string `'1'` is coerced
 
- into the number `1`, and `true` is also coerced into `1`, making them equal.
+into the number `1`, and `true` is also coerced into `1`, making them equal.
 
 ---
 
 ### **29. What is the output?**
 
 ```js
-console.log(!!false == !!'');
+console.log(!!false == !!"");
 ```
 
 **Output**: `true`
@@ -432,15 +441,17 @@ console.log([] == 0);
 ### **33. What will this return?**
 
 ```js
-console.log(0 == '0');
-console.log(0 === '0');
+console.log(0 == "0");
+console.log(0 === "0");
 ```
 
 **Output**:
+
 - `true`
 - `false`
 
 **Explanation**:
+
 - `==` performs type coercion, so `0` is coerced to `'0'`, making them equal.
 - `===` checks for strict equality without type coercion, so `0` (number) and `'0'` (string) are not equal.
 
@@ -461,7 +472,7 @@ console.log([1, 2] == [1, 2]);
 ### **35. What does this code print?**
 
 ```js
-console.log(1 + '2' - 1);
+console.log(1 + "2" - 1);
 ```
 
 **Output**: `11`
@@ -473,17 +484,19 @@ console.log(1 + '2' - 1);
 ### **36. What will be the output of this?**
 
 ```js
-console.log('5' - 3);
-console.log('5' * 2);
-console.log('5' / 2);
+console.log("5" - 3);
+console.log("5" * 2);
+console.log("5" / 2);
 ```
 
 **Output**:
+
 - `2`
 - `10`
 - `2.5`
 
 **Explanation**:
+
 - `'5' - 3` converts `'5'` to a number, resulting in `2`.
 - `'5' * 2` converts `'5'` to a number and multiplies, resulting in `10`.
 - `'5' / 2` converts `'5'` to a number and divides, resulting in `2.5`.
@@ -494,14 +507,16 @@ console.log('5' / 2);
 
 ```js
 console.log(0.1 + 0.2 == 0.3);
-console.log(Math.abs((0.1 + 0.2) - 0.3) < Number.EPSILON);
+console.log(Math.abs(0.1 + 0.2 - 0.3) < Number.EPSILON);
 ```
 
 **Output**:
+
 - `false`
 - `true`
 
 **Explanation**:
+
 - `0.1 + 0.2` is not exactly `0.3` due to floating-point precision errors.
 - `Number.EPSILON` is a tiny number representing the smallest interval between two representable numbers, used to check if the result is within acceptable precision.
 
@@ -527,10 +542,12 @@ console.log([1] === [1]);
 ```
 
 **Output**:
+
 - `false`
 - `false`
 
 **Explanation**:
+
 - `==` and `===` compare references, not values. Different array instances even with the same contents are not equal.
 
 ---
@@ -538,7 +555,7 @@ console.log([1] === [1]);
 ### **40. What is the output?**
 
 ```js
-console.log('a' + + 'b');
+console.log("a" + +"b");
 ```
 
 **Output**: `"aNaN"`
@@ -550,15 +567,17 @@ console.log('a' + + 'b');
 ### **41. What will this return?**
 
 ```js
-console.log('true' == true);
-console.log('true' === true);
+console.log("true" == true);
+console.log("true" === true);
 ```
 
 **Output**:
+
 - `false`
 - `false`
 
 **Explanation**:
+
 - `==` performs type coercion, but `'true'` is a string and `true` is a boolean, so they are not equal.
 - `===` checks for strict equality without type coercion.
 
@@ -567,7 +586,7 @@ console.log('true' === true);
 ### **42. What’s the result of this?**
 
 ```js
-console.log(1 + '2' + 2);
+console.log(1 + "2" + 2);
 ```
 
 **Output**: `"122"`
@@ -584,10 +603,12 @@ console.log({} + []);
 ```
 
 **Output**:
+
 - `"[object Object]"`
 - `0`
 
 **Explanation**:
+
 - `[] + {}`: Array `[]` is converted to an empty string `""`, and `{}` is converted to `[object Object]`.
 - `{}` is interpreted as a block statement, so `{} + []` is equivalent to `0 + []` which results in `0`.
 
@@ -596,7 +617,7 @@ console.log({} + []);
 ### **44. What is the output?**
 
 ```js
-console.log(1 + '1' - 1);
+console.log(1 + "1" - 1);
 ```
 
 **Output**: `10`
@@ -614,11 +635,13 @@ console.log(2 + [1]);
 ```
 
 **Output**:
+
 - `"12"`
 - `"12"`
 - `"21"`
 
 **Explanation**:
+
 - Arrays are converted to strings when used with `+`, so `[1] + [2]` becomes `"1" + "2"`.
 - `[1] + 2` is `"1" + "2"`.
 - `2 + [1]` is `2 + "1"` which results in `"21"`.
@@ -628,7 +651,7 @@ console.log(2 + [1]);
 ### **46. What will this return?**
 
 ```js
-console.log(+ '1' === 1);
+console.log(+"1" === 1);
 ```
 
 **Output**: `true`
@@ -640,17 +663,19 @@ console.log(+ '1' === 1);
 ### **47. What does this print?**
 
 ```js
-console.log(0 == '0');
-console.log(0 === '0');
+console.log(0 == "0");
+console.log(0 === "0");
 console.log(0 == []);
 ```
 
 **Output**:
+
 - `true`
 - `false`
 - `false`
 
 **Explanation**:
+
 - `==` performs type coercion, converting `'0'` to `0`.
 - `===` checks for strict equality.
 - `[]` coerces to `false`, so `0 == []` is `false`.
@@ -666,6 +691,7 @@ console.log({} == {});
 ```
 
 **Output**:
+
 - `false`
 - `false`
 - `false`
@@ -677,7 +703,7 @@ console.log({} == {});
 ### **49. What is the result?**
 
 ```js
-console.log('1' - - '1');
+console.log("1" - -"1");
 ```
 
 **Output**: `2`
@@ -689,7 +715,7 @@ console.log('1' - - '1');
 ### **50. What does this code print?**
 
 ```js
-console.log('foo' + +'bar');
+console.log("foo" + +"bar");
 ```
 
 **Output**: `"fooNaN"`
@@ -708,12 +734,14 @@ console.log(null / 1);
 ```
 
 **Output**:
+
 - `1`
 - `-1`
 - `0`
 - `0`
 
-**Explanation**: 
+**Explanation**:
+
 - `null` is coerced to `0` in numerical operations, except for addition where `null + 1` results in `1`.
 
 ---
@@ -722,17 +750,20 @@ console.log(null / 1);
 
 ```js
 console.log(0.1 + 0.2 == 0.3);
-console.log(Math.abs((0.1 + 0.2) - 0.3) < Number.EPSILON);
+console.log(Math.abs(0.1 + 0.2 - 0.3) < Number.EPSILON);
 ```
 
 **Output**:
+
 - `false
 
 `
+
 - `true`
 
-**Explanation**: 
-- Floating-point arithmetic may not be precise. 
+**Explanation**:
+
+- Floating-point arithmetic may not be precise.
 - `Number.EPSILON` is used to check if two numbers are close enough to be considered equal.
 
 ---
@@ -759,6 +790,7 @@ console.log(-false);
 ```
 
 **Output**:
+
 - `1`
 - `0`
 - `-1`
@@ -771,19 +803,21 @@ console.log(-false);
 ### **55. What does this code print?**
 
 ```js
-console.log('' + 0);
-console.log(0 + '');
-console.log('' - 0);
-console.log(0 - '');
+console.log("" + 0);
+console.log(0 + "");
+console.log("" - 0);
+console.log(0 - "");
 ```
 
 **Output**:
+
 - `"0"`
 - `"0"`
 - `0`
 - `0`
 
-**Explanation**: 
+**Explanation**:
+
 - `'' + 0` and `0 + ''` result in `'0'` due to string concatenation.
 - `'' - 0` results in `0` due to type coercion to numbers.
 
@@ -823,6 +857,7 @@ console.log(!!0);
 ```
 
 **Output**:
+
 - `false`
 - `false`
 - `false`
@@ -840,6 +875,7 @@ console.log([] === ![]);
 ```
 
 **Output**:
+
 - `true`
 - `false`
 
@@ -850,7 +886,7 @@ console.log([] === ![]);
 ### **60. What does this code print?**
 
 ```js
-console.log('a' + + 'b' + 'c');
+console.log("a" + +"b" + "c");
 ```
 
 **Output**: `"aNaNc"`
@@ -862,20 +898,22 @@ console.log('a' + + 'b' + 'c');
 ### **61. What’s the output of this?**
 
 ```js
-console.log('1' == 1);
-console.log('1' === 1);
-console.log('1' != 1);
-console.log('1' !== 1);
+console.log("1" == 1);
+console.log("1" === 1);
+console.log("1" != 1);
+console.log("1" !== 1);
 ```
 
 **Output**:
+
 - `true`
 - `false`
 - `false`
 - `true`
 
-**Explanation**: 
-- `==` performs type coercion, while `===` does not. 
+**Explanation**:
+
+- `==` performs type coercion, while `===` does not.
 - `'1' == 1` is `true` due to coercion. `'1' === 1` is `false` due to strict equality.
 
 ---
@@ -883,19 +921,21 @@ console.log('1' !== 1);
 ### **62. What will be the output?**
 
 ```js
-console.log('1' + 1);
-console.log('1' - 1);
-console.log(1 + '1');
-console.log(1 - '1');
+console.log("1" + 1);
+console.log("1" - 1);
+console.log(1 + "1");
+console.log(1 - "1");
 ```
 
 **Output**:
+
 - `"11"`
 - `0`
 - `"11"`
 - `0`
 
-**Explanation**: 
+**Explanation**:
+
 - `'1' + 1` and `1 + '1'` result in string concatenation.
 - `'1' - 1` and `1 - '1'` result in numeric operations.
 
@@ -910,11 +950,13 @@ console.log({} == {});
 ```
 
 **Output**:
+
 - `false`
 - `false`
 - `false`
 
-**Explanation**: 
+**Explanation**:
+
 - Arrays and objects are compared by reference, so different instances are not equal.
 
 ---
@@ -927,10 +969,12 @@ console.log([] === ![]);
 ```
 
 **Output**:
+
 - `true`
 - `false`
 
-**Explanation**: 
+**Explanation**:
+
 - `![]` evaluates to `false`, and `[] == false` is `true` due to type coercion.
 - `[] === ![]` is `false` as `[]` and `false` are different types.
 
@@ -939,17 +983,19 @@ console.log([] === ![]);
 ### **65. What will be the output?**
 
 ```js
-console.log('5' - 3);
-console.log('5' * 2);
-console.log('5' / 2);
+console.log("5" - 3);
+console.log("5" * 2);
+console.log("5" / 2);
 ```
 
 **Output**:
+
 - `2`
 - `10`
 - `2.5`
 
-**Explanation**: 
+**Explanation**:
+
 - `-` converts `'5'` to a number before subtraction.
 - `*` and `/` also coerce `'5'` to a number.
 
@@ -976,6 +1022,7 @@ console.log(typeof -Infinity);
 ```
 
 **Output**:
+
 - `"number"`
 - `"number"`
 - `"number"`
@@ -990,16 +1037,18 @@ console.log(typeof -Infinity);
 console.log(!!(1 + 1));
 console.log(!!(0 + 1));
 console.log(!!(0 - 1));
-console.log(!!(0));
+console.log(!!0);
 ```
 
 **Output**:
+
 - `true`
 - `true`
 - `true`
 - `false`
 
-**Explanation**: 
+**Explanation**:
+
 - `!!` converts truthy values to `true` and falsy values to `false`.
 
 ---
@@ -1007,17 +1056,19 @@ console.log(!!(0));
 ### **69. What does this print?**
 
 ```js
-console.log('1' + 1);
-console.log(1 + '1');
-console.log(1 - '1');
+console.log("1" + 1);
+console.log(1 + "1");
+console.log(1 - "1");
 ```
 
 **Output**:
+
 - `"11"`
 - `"11"`
 - `0`
 
-**Explanation**: 
+**Explanation**:
+
 - `+` with a string converts numbers to strings for concatenation.
 - `-` converts the string to a number before performing subtraction.
 
@@ -1031,10 +1082,12 @@ console.log([] === ![]);
 ```
 
 **Output**:
+
 - `true`
 - `false`
 
-**Explanation**: 
+**Explanation**:
+
 - `![]` converts to `false`, so `[] == false` is `true` due to type coercion.
 - `[] === ![]` is `false` as they are different types.
 
@@ -1048,10 +1101,12 @@ console.log([] + {});
 ```
 
 **Output**:
+
 - `0`
 - `"[object Object]"`
 
-**Explanation**: 
+**Explanation**:
+
 - `{}` is treated as a block, so `{} + []` results in `0 + []`.
 - `[] + {}` results in an empty string concatenated with the string representation of the object.
 
@@ -1060,13 +1115,14 @@ console.log([] + {});
 ### **72. What does this code print?**
 
 ```js
-console.log(+ '1' + 1);
-console.log(+ '1' - 1);
-console.log(+ '1' * 2);
-console.log(+ '1' / 2);
+console.log(+"1" + 1);
+console.log(+"1" - 1);
+console.log(+"1" * 2);
+console.log(+"1" / 2);
 ```
 
 **Output**:
+
 - `2`
 - `0`
 - `2`
@@ -1086,12 +1142,14 @@ console.log([] === false);
 ```
 
 **Output**:
+
 - `false`
 - `false`
 - `false`
 - `false`
 
-**Explanation**: 
+**Explanation**:
+
 - Arrays and objects are compared by reference. Different instances with the same content are not equal.
 - `[]` coerces to `false` in comparisons, but strict equality `===` is `false` for different types.
 
@@ -1100,18 +1158,21 @@ console.log([] === false);
 ### **74. What’s the result of this?**
 
 ```js
-console.log(1 + '1' - 1);
-console.log(1 - '1' + 1);
+console.log(1 + "1" - 1);
+console.log(1 - "1" + 1);
 ```
 
 **Output**:
+
 - `10`
 - `1`
 
-**Explanation**: 
+**Explanation**:
+
 - `1 + '1'` results in `'11'`,
 
- and subtracting `1` coerces it back to `10`.
+and subtracting `1` coerces it back to `10`.
+
 - `1 - '1'` results in `0`, adding `1` results in `1`.
 
 ---
@@ -1122,10 +1183,11 @@ console.log(1 - '1' + 1);
 console.log(!!undefined);
 console.log(!!NaN);
 console.log(!!0);
-console.log(!!(''));
+console.log(!!"");
 ```
 
 **Output**:
+
 - `false`
 - `false`
 - `false`
@@ -1138,19 +1200,21 @@ console.log(!!(''));
 ### **76. What will be the output?**
 
 ```js
-console.log(typeof (1 + '1'));
-console.log(typeof (1 - '1'));
-console.log(typeof (1 * '1'));
-console.log(typeof (1 / '1'));
+console.log(typeof (1 + "1"));
+console.log(typeof (1 - "1"));
+console.log(typeof (1 * "1"));
+console.log(typeof (1 / "1"));
 ```
 
 **Output**:
+
 - `"string"`
 - `"number"`
 - `"number"`
 - `"number"`
 
-**Explanation**: 
+**Explanation**:
+
 - `1 + '1'` results in a string.
 - `1 - '1'`, `1 * '1'`, and `1 / '1'` result in numbers.
 
@@ -1166,6 +1230,7 @@ console.log({} === {});
 ```
 
 **Output**:
+
 - `false`
 - `false`
 - `false`
@@ -1178,13 +1243,14 @@ console.log({} === {});
 ### **78. What’s the result?**
 
 ```js
-console.log(!!'false');
+console.log(!!"false");
 console.log(!!false);
-console.log(!!'0');
+console.log(!!"0");
 console.log(!!0);
 ```
 
 **Output**:
+
 - `true`
 - `false`
 - `true`
@@ -1215,11 +1281,13 @@ console.log(+null + 1);
 ```
 
 **Output**:
+
 - `1`
 - `NaN`
 - `1`
 
 **Explanation**:
+
 - `+[]` is `0`, so `0 + 1` is `1`.
 - `+{}` is `NaN` because `{}` cannot be coerced to a number.
 - `+null` is `0`, so `0 + 1` is `1`.
@@ -1236,12 +1304,14 @@ console.log(false === []);
 ```
 
 **Output**:
+
 - `false`
 - `false`
 - `false`
 - `false`
 
-**Explanation**: 
+**Explanation**:
+
 - `[]` is not strictly equal to `false` or equal to `false` with type coercion.
 
 ---
@@ -1256,12 +1326,14 @@ console.log(1 - [1]);
 ```
 
 **Output**:
+
 - `"11"`
 - `0`
 - `"11"`
 - `0`
 
-**Explanation**: 
+**Explanation**:
+
 - `+` with a string converts numbers to strings for concatenation.
 - `-` converts the array to a number for subtraction.
 
@@ -1270,15 +1342,17 @@ console.log(1 - [1]);
 ### **83. What will this return?**
 
 ```js
-console.log(!!' ' === !!'');
-console.log(!!'0' === !!0);
+console.log(!!" " === !!"");
+console.log(!!"0" === !!0);
 ```
 
 **Output**:
+
 - `false`
 - `true`
 
-**Explanation**: 
+**Explanation**:
+
 - `' '` is a non-empty string and `''` is an empty string.
 - `'0'` and `0` both convert to `true` when using `!!`.
 
@@ -1292,6 +1366,7 @@ console.log([1] + 1 + 1);
 ```
 
 **Output**:
+
 - `"111"`
 - `"111"`
 
@@ -1302,15 +1377,17 @@ console.log([1] + 1 + 1);
 ### **85. What is the output of this?**
 
 ```js
-console.log(1 + '1' + 1);
-console.log(1 + 1 + '1');
+console.log(1 + "1" + 1);
+console.log(1 + 1 + "1");
 ```
 
 **Output**:
+
 - `"111"`
 - `"21"`
 
 **Explanation**:
+
 - `1 + '1'` results in `'11'`, and adding `1` results in `'111'`.
 - `1 + 1` results in `2`, and adding `'1'` results in `'21'`.
 
@@ -1325,11 +1402,13 @@ console.log(+null + 1);
 ```
 
 **Output**:
+
 - `1`
 - `NaN`
 - `1`
 
 **Explanation**:
+
 - `+[]` is `0`, so `0 + 1` is `1`.
 - `+{}` is `NaN` because `{}` cannot be coerced to a number.
 - `+null` is `0`, so `0 + 1` is `1`.
@@ -1346,6 +1425,7 @@ console.log(false === []);
 ```
 
 **Output**:
+
 - `false`
 - `false`
 - `false`
@@ -1358,15 +1438,17 @@ console.log(false === []);
 ### **88. What’s the result?**
 
 ```js
-console.log('1' - - '1');
-console.log('1' + - '1');
+console.log("1" - -"1");
+console.log("1" + -"1");
 ```
 
 **Output**:
+
 - `2`
 - `'0'`
 
 **Explanation**:
+
 - `'1' - - '1'` is equivalent to `1 - (-1)`, which is `2`.
 - `'1' + - '1'` is `'1' + -1`, resulting in `'0'`.
 
@@ -1380,10 +1462,12 @@ console.log([] === ![]);
 ```
 
 **Output**:
+
 - `true`
 - `false`
 
-**Explanation**: 
+**Explanation**:
+
 - `![]` evaluates to `false`, and `[] == false` is `true` due to type coercion.
 - `[] === ![]` is `false` because they are different types.
 
@@ -1397,10 +1481,12 @@ console.log([{}] + []);
 ```
 
 **Output**:
+
 - `"[object Object]"`
 - `"[object Object]"`
 
-**Explanation**: 
+**Explanation**:
+
 - `[]` coerces to an empty string `""`, `{}` to `[object Object]`.
 - `[{}] + []` results in `[object Object]`.
 
@@ -1416,12 +1502,14 @@ console.log([1] === [1]);
 ```
 
 **Output**:
+
 - `false`
 - `false`
 - `false`
 - `false`
 
-**Explanation**: 
+**Explanation**:
+
 - Arrays are compared by reference, so different instances are not equal.
 
 ---
@@ -1434,10 +1522,12 @@ console.log([] - []);
 ```
 
 **Output**:
+
 - `""`
 - `NaN`
 
 **Explanation**:
+
 - `[] + []` results in an empty string.
 - `[] - []` results in `NaN` due to the subtraction operation with arrays.
 
@@ -1446,19 +1536,21 @@ console.log([] - []);
 ### **93. What’s the result of this?**
 
 ```js
-console.log(0 == '0');
-console.log(0 === '0');
-console.log('0' == 0);
-console.log('0' === 0);
+console.log(0 == "0");
+console.log(0 === "0");
+console.log("0" == 0);
+console.log("0" === 0);
 ```
 
 **Output**:
+
 - `true`
 - `false`
 - `true`
 - `false`
 
-**Explanation**: 
+**Explanation**:
+
 - `==` performs type coercion, so `0 == '0'` is `true`.
 - `===` checks for strict equality.
 
@@ -1467,19 +1559,21 @@ console.log('0' === 0);
 ### **94. What will this return?**
 
 ```js
-console.log('1' == 1);
-console.log('1' === 1);
-console.log('1' != 1);
-console.log('1' !== 1);
+console.log("1" == 1);
+console.log("1" === 1);
+console.log("1" != 1);
+console.log("1" !== 1);
 ```
 
 **Output**:
+
 - `true`
 - `false`
 - `false`
 - `true`
 
 **Explanation**:
+
 - `==` coerces types, while `===` does not.
 
 ---
@@ -1492,6 +1586,7 @@ console.log([1, 2] === [1, 2]);
 ```
 
 **Output**:
+
 - `false`
 - `false`
 
@@ -1509,13 +1604,13 @@ console.log(undefined == 0);
 ```
 
 **Output**:
+
 - `true`
 - `false`
 - `false`
 - `false`
 
 **Explanation**:
-
 
 - `null` and `undefined` are loosely equal but not strictly equal.
 - `null` and `undefined` are not equal to `0`.
@@ -1525,17 +1620,19 @@ console.log(undefined == 0);
 ### **97. What does this code print?**
 
 ```js
-console.log('5' - 3);
-console.log('5' * 2);
-console.log('5' / 2);
+console.log("5" - 3);
+console.log("5" * 2);
+console.log("5" / 2);
 ```
 
 **Output**:
+
 - `2`
 - `10`
 - `2.5`
 
 **Explanation**:
+
 - `-` converts `'5'` to a number for subtraction.
 - `*` and `/` also coerce `'5'` to a number for operations.
 
@@ -1549,10 +1646,12 @@ console.log([] === ![]);
 ```
 
 **Output**:
+
 - `true`
 - `false`
 
 **Explanation**:
+
 - `![]` evaluates to `false`, so `[] == false` is `true`.
 - `[] === ![]` is `false` due to different types.
 
@@ -1578,85 +1677,101 @@ console.log([{}] + []);
 ```
 
 **Output**:
+
 - `"[object Object]"`
 - `"[object Object]"`
 
 **Explanation**:
+
 - `[] + {} + []` results in the empty string and object coercion to `[object Object]`.
 - `[{}] + []` results in `[object Object]`.
-
-
-
-
 
 ### Arrays
 
 1. **What does this code print?**
+
    ```js
    console.log([1] + [2]);
    ```
+
    **Output**: `"12"`
    **Explanation**: Arrays are coerced into strings and concatenated.
 
 2. **What is the result of this code?**
+
    ```js
    console.log([1, 2, 3].slice(1, 2));
    ```
+
    **Output**: `[2]`
    **Explanation**: `slice` extracts elements from index 1 to 2 (exclusive).
 
 3. **What will this code output?**
+
    ```js
-   console.log([1, 2, 3].map(x => x * x));
+   console.log([1, 2, 3].map((x) => x * x));
    ```
+
    **Output**: `[1, 4, 9]`
    **Explanation**: `map` applies the function to each element.
 
 4. **What does this code print?**
+
    ```js
-   console.log([1, 2, 3].filter(x => x > 1));
+   console.log([1, 2, 3].filter((x) => x > 1));
    ```
+
    **Output**: `[2, 3]`
    **Explanation**: `filter` keeps elements greater than 1.
 
 5. **What is the result of this code?**
+
    ```js
    console.log([1, 2, 3].reduce((a, b) => a + b));
    ```
+
    **Output**: `6`
    **Explanation**: `reduce` sums up the elements.
 
 6. **What will this code print?**
+
    ```js
    console.log([1, 2, 3].concat([4, 5]));
    ```
+
    **Output**: `[1, 2, 3, 4, 5]`
    **Explanation**: `concat` merges arrays.
 
 7. **What does this code return?**
+
    ```js
    console.log([1, 2, 3].includes(2));
    ```
+
    **Output**: `true`
    **Explanation**: `includes` checks if the element exists in the array.
 
 8. **What is the output?**
+
    ```js
    console.log([1, [2, [3]]].flat(2));
    ```
+
    **Output**: `[1, 2, 3]`
    **Explanation**: `flat` flattens nested arrays.
 
 9. **What will this code print?**
+
    ```js
-   console.log([1, 2, 3].find(x => x > 1));
+   console.log([1, 2, 3].find((x) => x > 1));
    ```
+
    **Output**: `2`
    **Explanation**: `find` returns the first element that satisfies the condition.
 
 10. **What does this code return?**
     ```js
-    console.log([1, 2, 3].findIndex(x => x === 2));
+    console.log([1, 2, 3].findIndex((x) => x === 2));
     ```
     **Output**: `1`
     **Explanation**: `findIndex` returns the index of the first element that satisfies the condition.
@@ -1664,79 +1779,97 @@ console.log([{}] + []);
 ### Objects
 
 11. **What does this code print?**
+
     ```js
-    const obj = {a: 1, b: 2};
+    const obj = { a: 1, b: 2 };
     console.log(Object.keys(obj));
     ```
+
     **Output**: `["a", "b"]`
     **Explanation**: `Object.keys` returns the keys of an object.
 
 12. **What is the result of this code?**
+
     ```js
-    const obj = {a: 1, b: 2};
+    const obj = { a: 1, b: 2 };
     console.log(Object.values(obj));
     ```
+
     **Output**: `[1, 2]`
     **Explanation**: `Object.values` returns the values of an object.
 
 13. **What will this code print?**
+
     ```js
-    const obj = {a: 1};
+    const obj = { a: 1 };
     obj.a = 2;
     console.log(obj);
     ```
+
     **Output**: `{a: 2}`
     **Explanation**: The value of `a` is updated.
 
 14. **What does this code return?**
+
     ```js
-    console.log({a: 1} instanceof Object);
+    console.log({ a: 1 } instanceof Object);
     ```
+
     **Output**: `true`
     **Explanation**: `{a: 1}` is an instance of `Object`.
 
 15. **What will this code print?**
+
     ```js
-    const obj1 = {a: 1};
+    const obj1 = { a: 1 };
     const obj2 = Object.create(obj1);
     console.log(obj2.a);
     ```
+
     **Output**: `1`
     **Explanation**: `Object.create` creates an object with `obj1` as its prototype.
 
 16. **What does this code return?**
+
     ```js
-    console.log({...{a: 1}});
+    console.log({ ...{ a: 1 } });
     ```
+
     **Output**: `{a: 1}`
     **Explanation**: The spread operator creates a shallow copy of the object.
 
 17. **What is the output?**
+
     ```js
-    const obj = {a: 1};
+    const obj = { a: 1 };
     delete obj.a;
     console.log(obj);
     ```
+
     **Output**: `{}`
     **Explanation**: `delete` removes a property from an object.
 
 18. **What does this code print?**
+
     ```js
-    console.log({a: 1, a: 2});
+    console.log({ a: 1, a: 2 });
     ```
+
     **Output**: `{a: 2}`
     **Explanation**: Duplicate keys in objects are overwritten.
 
 19. **What will this code output?**
+
     ```js
-    console.log(Object.entries({a: 1, b: 2}));
+    console.log(Object.entries({ a: 1, b: 2 }));
     ```
+
     **Output**: `[["a", 1], ["b", 2]]`
     **Explanation**: `Object.entries` returns an array of key-value pairs.
 
 20. **What does this code return?**
     ```js
-    console.log(Object.assign({}, {a: 1}, {b: 2}));
+    console.log(Object.assign({}, { a: 1 }, { b: 2 }));
     ```
     **Output**: `{a: 1, b: 2}`
     **Explanation**: `Object.assign` merges objects.
@@ -1744,93 +1877,111 @@ console.log([{}] + []);
 ### Functions
 
 21. **What does this code print?**
+
     ```js
     function foo() {
-        return
-        {
-            bar: 1
-        };
+      return;
+      {
+        bar: 1;
+      }
     }
     console.log(foo());
     ```
+
     **Output**: `undefined`
     **Explanation**: The function implicitly returns `undefined` because of the newline.
 
 22. **What is the result of this code?**
+
     ```js
     function foo(a, b) {
-        console.log(a, b);
+      console.log(a, b);
     }
     foo(1);
     ```
+
     **Output**: `1 undefined`
     **Explanation**: `b` is `undefined` because it was not provided.
 
 23. **What will this code print?**
+
     ```js
     const add = (a, b = 2) => a + b;
     console.log(add(3));
     ```
+
     **Output**: `5`
     **Explanation**: The default value for `b` is used.
 
 24. **What does this code print?**
+
     ```js
     function foo(a, b = () => a) {
-        return b();
+      return b();
     }
     console.log(foo(1));
     ```
+
     **Output**: `1`
     **Explanation**: `b` is a function returning `a`.
 
 25. **What will this code return?**
+
     ```js
     function add(a, ...rest) {
-        return a + rest.reduce((acc, num) => acc + num, 0);
+      return a + rest.reduce((acc, num) => acc + num, 0);
     }
     console.log(add(1, 2, 3, 4));
     ```
+
     **Output**: `10`
     **Explanation**: `...rest` collects remaining arguments into an array.
 
 26. **What does this code print?**
+
     ```js
-    const obj = {a: 1};
+    const obj = { a: 1 };
     function bar() {
-        console.log(this.a);
+      console.log(this.a);
     }
     bar.call(obj);
     ```
+
     **Output**: `1`
     **Explanation**: `call` sets `this` to `obj`.
 
 27. **What will this code output?**
+
     ```js
-    const obj = {a: 1};
+    const obj = { a: 1 };
     function bar() {
-        console.log(this.a);
+      console.log(this.a);
     }
     bar.bind(obj)();
     ```
+
     **Output**: `1`
     **Explanation**: `bind` sets `this` permanently.
 
 28. **What does this code print?**
+
     ```js
     function foo(a, b = (a = 2) => a) {
-        return b();
+      return b();
     }
     console.log(foo(1));
     ```
+
     **Output**: `2`
     **Explanation**: The default function parameter modifies `a`.
 
 29. **What is the output?**
+
     ```js
     const add = (a, b) => a + b;
     console.log(add(2, 3));
     ```
+
     **Output**: `5`
     **Explanation**: Arrow function returns the sum of `a` and `b`.
 
@@ -1847,10 +1998,10 @@ console.log([{}] + []);
 31. **What does this code print?**
     ```js
     function foo() {
-        console.log('foo');
+      console.log("foo");
     }
     function bar() {
-        foo();
+      foo();
     }
     bar();
     ```
@@ -1860,7 +2011,7 @@ console.log([{}] + []);
 32
 
 . **What will this code output?**
-    ```js
+`js
     function baz() {
         console.log('baz');
         foo();
@@ -1869,135 +2020,158 @@ console.log([{}] + []);
         console.log('foo');
     }
     baz();
-    ```
-    **Output**:
-    ```
-    baz
+    `
+**Output**:
+`  baz
     foo
-    ```
-    **Explanation**: `baz` prints `baz`, then calls `foo`.
+ `
+**Explanation**: `baz` prints `baz`, then calls `foo`.
 
 33. **What does this code print?**
+
     ```js
     function a() {
-        b();
+      b();
     }
     function b() {
-        console.log('b');
+      console.log("b");
     }
     a();
     ```
+
     **Output**: `b`
     **Explanation**: `a` calls `b`, which prints `b`.
 
 34. **What will this code output?**
+
     ```js
     function one() {
-        setTimeout(() => console.log('one'), 0);
+      setTimeout(() => console.log("one"), 0);
     }
     function two() {
-        console.log('two');
+      console.log("two");
     }
     one();
     two();
     ```
+
     **Output**:
+
     ```
     two
     one
     ```
+
     **Explanation**: `two` prints first, then `setTimeout` executes.
 
 35. **What does this code print?**
+
     ```js
     function foo() {
-        console.log('foo');
+      console.log("foo");
     }
     function bar() {
-        console.log('bar');
+      console.log("bar");
     }
     foo();
     bar();
     ```
+
     **Output**:
+
     ```
     foo
     bar
     ```
+
     **Explanation**: `foo` and `bar` are called sequentially.
 
 36. **What will this code output?**
+
     ```js
     function foo() {
-        bar();
-        console.log('foo');
+      bar();
+      console.log("foo");
     }
     function bar() {
-        console.log('bar');
+      console.log("bar");
     }
     foo();
     ```
+
     **Output**:
+
     ```
     bar
     foo
     ```
+
     **Explanation**: `foo` calls `bar`, then prints `foo`.
 
 37. **What does this code print?**
+
     ```js
     function a() {
-        console.log('a');
+      console.log("a");
     }
     function b() {
-        console.log('b');
-        a();
+      console.log("b");
+      a();
     }
     b();
     ```
+
     **Output**:
+
     ```
     b
     a
     ```
+
     **Explanation**: `b` prints `b`, then calls `a`.
 
 38. **What will this code output?**
+
     ```js
     function foo() {
-        bar();
+      bar();
     }
     function bar() {
-        console.log('bar');
+      console.log("bar");
     }
     foo();
     ```
+
     **Output**: `bar`
     **Explanation**: `foo` calls `bar`.
 
 39. **What does this code print?**
+
     ```js
     function foo() {
-        console.log('foo');
-        setTimeout(() => console.log('foo timeout'), 0);
+      console.log("foo");
+      setTimeout(() => console.log("foo timeout"), 0);
     }
     foo();
     ```
+
     **Output**:
+
     ```
     foo
     foo timeout
     ```
+
     **Explanation**: `setTimeout` executes after the stack is clear.
 
 40. **What will this code print?**
     ```js
     function foo() {
-        console.log('foo');
-        bar();
+      console.log("foo");
+      bar();
     }
     function bar() {
-        console.log('bar');
+      console.log("bar");
     }
     foo();
     ```
@@ -2011,78 +2185,104 @@ console.log([{}] + []);
 ### Promises
 
 41. **What does this code print?**
+
     ```js
-    new Promise(resolve => resolve('done'))
-        .then(result => console.log(result));
+    new Promise((resolve) => resolve("done")).then((result) =>
+      console.log(result)
+    );
     ```
+
     **Output**: `done`
     **Explanation**: `resolve` triggers the `then` callback.
 
 42. **What is the result of this code?**
+
     ```js
-    new Promise((resolve, reject) => reject('error'))
-        .catch(err => console.log(err));
+    new Promise((resolve, reject) => reject("error")).catch((err) =>
+      console.log(err)
+    );
     ```
+
     **Output**: `error`
     **Explanation**: `catch` handles rejected promises.
 
 43. **What will this code output?**
+
     ```js
-    const promise = new Promise(resolve => resolve(1));
-    promise.then(x => x + 1).then(x => console.log(x));
+    const promise = new Promise((resolve) => resolve(1));
+    promise.then((x) => x + 1).then((x) => console.log(x));
     ```
+
     **Output**: `2`
     **Explanation**: Chained promises process `x` sequentially.
 
 44. **What does this code print?**
+
     ```js
-    new Promise(resolve => setTimeout(() => resolve('done'), 1000))
-        .then(result => console.log(result));
+    new Promise((resolve) => setTimeout(() => resolve("done"), 1000)).then(
+      (result) => console.log(result)
+    );
     ```
+
     **Output**: `done` (after 1 second)
     **Explanation**: `setTimeout` delays the promise resolution.
 
 45. **What will this code output?**
+
     ```js
-    const promise = Promise.resolve('resolved');
+    const promise = Promise.resolve("resolved");
     promise.then(console.log).catch(console.error);
     ```
+
     **Output**: `resolved`
     **Explanation**: `Promise.resolve` immediately resolves.
 
 46. **What does this code print?**
+
     ```js
-    new Promise((resolve, reject) => resolve('done'))
-        .then(() => { throw new Error('error'); })
-        .catch(err => console.log(err.message));
+    new Promise((resolve, reject) => resolve("done"))
+      .then(() => {
+        throw new Error("error");
+      })
+      .catch((err) => console.log(err.message));
     ```
+
     **Output**: `error`
     **Explanation**: Error thrown in the `then` is caught by `catch`.
 
 47. **What will this code output?**
+
     ```js
-    Promise.all([Promise.resolve(1), Promise.resolve(2)])
-        .then(results => console.log(results));
+    Promise.all([Promise.resolve(1), Promise.resolve(2)]).then((results) =>
+      console.log(results)
+    );
     ```
+
     **Output**: `[1, 2]`
     **Explanation**: `Promise.all` resolves when all promises resolve.
 
 48. **What does this code print?**
+
     ```js
-    Promise.race([Promise.resolve(1), new Promise(resolve => setTimeout(() => resolve(2), 1000))])
-        .then(result => console.log(result));
+    Promise.race([
+      Promise.resolve(1),
+      new Promise((resolve) => setTimeout(() => resolve(2), 1000)),
+    ]).then((result) => console.log(result));
     ```
+
     **Output**: `1`
     **Explanation**: `Promise.race` returns the result of the first resolved promise.
 
 49. **What will this code output?**
+
     ```js
     const promise = new Promise((resolve, reject) => {
-        setTimeout(() => resolve('done'), 500);
-        setTimeout(() => reject('error'), 100);
+      setTimeout(() => resolve("done"), 500);
+      setTimeout(() => reject("error"), 100);
     });
     promise.then(console.log).catch(console.error);
     ```
+
     **Output**: `error`
     **Explanation**: The first `setTimeout` rejects the promise before the second resolves.
 
@@ -2090,7 +2290,7 @@ console.log([{}] + []);
     ```js
     const p1 = new Promise((resolve, reject) => setTimeout(resolve, 1000));
     const p2 = new Promise((resolve, reject) => setTimeout(resolve, 2000));
-    Promise.all([p1, p2]).then(() => console.log('done'));
+    Promise.all([p1, p2]).then(() => console.log("done"));
     ```
     **Output**: `done` (after 2 seconds)
     **Explanation**: `Promise.all` waits for all promises to resolve.
@@ -2098,114 +2298,132 @@ console.log([{}] + []);
 ### Asynchronous Functions
 
 51. **What does this code print?**
+
     ```js
     async function foo() {
-        return 1;
+      return 1;
     }
     foo().then(console.log);
     ```
+
     **Output**: `1`
     **Explanation**: `async` functions return a promise with the resolved value.
 
 52. **What is the result of this code?**
+
     ```js
     async function foo() {
-        return Promise.resolve(2);
+      return Promise.resolve(2);
     }
     foo().then(console.log);
     ```
+
     **Output**: `2`
     **Explanation**: The returned promise resolves to `2`.
 
 53. **What will this code output?**
+
     ```js
     async function foo() {
-        throw new Error('error');
+      throw new Error("error");
     }
     foo().catch(console.error);
     ```
+
     **Output**: `Error: error`
     **Explanation**: Errors in `async` functions are caught in `catch`.
 
 54. **What does this code print?**
+
     ```js
     async function foo() {
-        await new Promise(resolve => setTimeout(() => resolve('done'), 1000));
-        console.log('foo');
+      await new Promise((resolve) => setTimeout(() => resolve("done"), 1000));
+      console.log("foo");
     }
     foo();
     ```
+
     **Output**: `foo` (after 1 second)
     **Explanation**: `await` waits for the promise to resolve before printing.
 
 55. **What will this code output?**
+
     ```js
     async function foo() {
-        const result = await Promise.all([
-            new Promise(resolve => setTimeout(() => resolve('a'), 100)),
-            new Promise(resolve => setTimeout(() => resolve('b'), 200))
-        ]);
-        console.log(result);
+      const result = await Promise.all([
+        new Promise((resolve) => setTimeout(() => resolve("a"), 100)),
+        new Promise((resolve) => setTimeout(() => resolve("b"), 200)),
+      ]);
+      console.log(result);
     }
     foo();
     ```
+
     **Output**: `['a', 'b']`
     **Explanation**: `Promise.all` waits for all promises to resolve.
 
 56. **What does this code print?**
+
     ```js
     async function foo() {
-        console.log(await 1);
+      console.log(await 1);
     }
     foo();
     ```
+
     **Output**: `1`
     **Explanation**: `await` resolves immediately for non-promise values.
 
 57. **What will this code output?**
+
     ```js
     async function foo() {
-        const x = await 1;
-        console.log(x);
+      const x = await 1;
+      console.log(x);
     }
     foo();
     ```
+
     **Output**: `1`
     **Explanation**: `await` returns the resolved value directly.
 
 58. **What does this code print?**
+
     ```js
     async function foo() {
-        const x = await new Promise(resolve => setTimeout(() => resolve('done'), 500));
-        console.log(x);
+      const x = await new Promise((resolve) =>
+        setTimeout(() => resolve("done"), 500)
+      );
+      console.log(x);
     }
     foo();
     ```
+
     **Output**: `done` (after 0.5 seconds)
     **Explanation**: `await` waits for the promise to resolve.
 
 59. **What will this code output?**
+
     ```js
     async function foo() {
-        const x = await Promise.reject('error');
-        console.log(x);
+      const x = await Promise.reject("error");
+      console.log(x);
     }
-    foo
-
-().catch(console.error);
+    foo().catch(console.error);
     ```
+
     **Output**: `error`
     **Explanation**: Rejected promises are caught in `catch`.
 
 60. **What does this code print?**
     ```js
     async function foo() {
-        try {
-            const result = await new Promise((resolve, reject) => reject('error'));
-            console.log(result);
-        } catch (e) {
-            console.log(e);
-        }
+      try {
+        const result = await new Promise((resolve, reject) => reject("error"));
+        console.log(result);
+      } catch (e) {
+        console.log(e);
+      }
     }
     foo();
     ```
@@ -2215,122 +2433,172 @@ console.log([{}] + []);
 ### Event Phases
 
 61. **What does this code print?**
+
     ```js
-    document.body.addEventListener('click', () => console.log('clicked'), true);
-    document.body.addEventListener('click', () => console.log('clicked again'));
+    document.body.addEventListener("click", () => console.log("clicked"), true);
+    document.body.addEventListener("click", () => console.log("clicked again"));
     document.body.click();
     ```
+
     **Output**:
+
     ```
     clicked
     clicked again
     ```
+
     **Explanation**: The event captures and bubbles through phases.
 
 62. **What is the result of this code?**
+
     ```js
-    document.addEventListener('click', function(event) {
-        console.log('Event at document');
-    }, true);
-    document.body.addEventListener('click', function(event) {
-        console.log('Event at body');
-    }, true);
+    document.addEventListener(
+      "click",
+      function (event) {
+        console.log("Event at document");
+      },
+      true
+    );
+    document.body.addEventListener(
+      "click",
+      function (event) {
+        console.log("Event at body");
+      },
+      true
+    );
     document.body.click();
     ```
+
     **Output**:
+
     ```
     Event at document
     Event at body
     ```
+
     **Explanation**: The event is captured at each phase.
 
 63. **What will this code output?**
+
     ```js
-    document.body.addEventListener('click', () => console.log('body'), false);
-    document.body.addEventListener('click', () => console.log('body again'), true);
+    document.body.addEventListener("click", () => console.log("body"), false);
+    document.body.addEventListener(
+      "click",
+      () => console.log("body again"),
+      true
+    );
     document.body.click();
     ```
+
     **Output**:
+
     ```
     body again
     body
     ```
+
     **Explanation**: `true` indicates capturing phase, `false` is bubbling phase.
 
 64. **What does this code print?**
+
     ```js
-    document.addEventListener('click', function() {
-        console.log('clicked');
-    }, false);
+    document.addEventListener(
+      "click",
+      function () {
+        console.log("clicked");
+      },
+      false
+    );
     document.body.click();
     ```
+
     **Output**: `clicked`
     **Explanation**: The event is propagated to the document from the body.
 
 65. **What will this code output?**
+
     ```js
-    document.body.addEventListener('click', function() {
-        console.log('body clicked');
+    document.body.addEventListener("click", function () {
+      console.log("body clicked");
     });
-    document.body.addEventListener('click', function(event) {
-        event.stopImmediatePropagation();
-        console.log('immediate stop');
+    document.body.addEventListener("click", function (event) {
+      event.stopImmediatePropagation();
+      console.log("immediate stop");
     });
     document.body.click();
     ```
+
     **Output**:
+
     ```
     immediate stop
     ```
+
     **Explanation**: `stopImmediatePropagation` prevents further propagation.
 
 66. **What does this code print?**
+
     ```js
-    document.body.addEventListener('click', () => console.log('body'));
-    document.body.removeEventListener('click', () => console.log('body'));
+    document.body.addEventListener("click", () => console.log("body"));
+    document.body.removeEventListener("click", () => console.log("body"));
     document.body.click();
     ```
+
     **Output**: (Nothing)
     **Explanation**: `removeEventListener` does not remove the listener due to a different function reference.
 
 67. **What will this code output?**
+
     ```js
-    document.body.addEventListener('click', function() {
-        console.log('event handler');
+    document.body.addEventListener("click", function () {
+      console.log("event handler");
     });
-    document.body.dispatchEvent(new Event('click'));
+    document.body.dispatchEvent(new Event("click"));
     ```
+
     **Output**: `event handler`
     **Explanation**: `dispatchEvent` triggers the event handler.
 
 68. **What does this code print?**
+
     ```js
-    document.body.addEventListener('click', function() {
-        console.log('event fired');
-    }, true);
+    document.body.addEventListener(
+      "click",
+      function () {
+        console.log("event fired");
+      },
+      true
+    );
     document.body.click();
     ```
+
     **Output**: `event fired`
     **Explanation**: Capturing phase is used, so the event is caught.
 
 69. **What will this code output?**
+
     ```js
-    const handler = () => console.log('handler');
-    document.body.addEventListener('click', handler);
-    document.body.removeEventListener('click', handler);
+    const handler = () => console.log("handler");
+    document.body.addEventListener("click", handler);
+    document.body.removeEventListener("click", handler);
     document.body.click();
     ```
+
     **Output**: (Nothing)
     **Explanation**: Event handler is removed before being called.
 
 70. **What does this code print?**
     ```js
-    document.addEventListener('click', function(event) {
+    document.addEventListener(
+      "click",
+      function (event) {
         event.stopPropagation();
-        console.log('stop propagation');
-    }, true);
-    document.body.addEventListener('click', function() {
-        console.log('body click');
+        console.log("stop propagation");
+      },
+      true
+    );
+    document.body.addEventListener("click", function () {
+      console.log("body click");
     });
     document.body.click();
     ```
@@ -2343,102 +2611,122 @@ console.log([{}] + []);
 ### DOM Manipulation
 
 71. **What does this code print?**
+
     ```js
     document.body.innerHTML = '<div id="test">Test</div>';
-    console.log(document.getElementById('test').innerText);
+    console.log(document.getElementById("test").innerText);
     ```
+
     **Output**: `Test`
     **Explanation**: `innerText` returns the content of the element.
 
 72. **What is the result of this code?**
+
     ```js
-    const div = document.createElement('div');
-    div.setAttribute('class', 'my-class');
+    const div = document.createElement("div");
+    div.setAttribute("class", "my-class");
     console.log(div.className);
     ```
+
     **Output**: `my-class`
     **Explanation**: `className` returns the class attribute.
 
 73. **What will this code output?**
+
     ```js
     document.body.innerHTML = '<p id="para">Hello</p>';
-    const p = document.getElementById('para');
-    p.textContent = 'World';
+    const p = document.getElementById("para");
+    p.textContent = "World";
     console.log(p.innerHTML);
     ```
+
     **Output**: `World`
     **Explanation**: `textContent` updates the text inside the element.
 
 74. **What does this code print?**
+
     ```js
     document.body.innerHTML = '<button id="btn">Click me</button>';
-    const button = document.getElementById('btn');
-    button.onclick = () => console.log('Button clicked');
+    const button = document.getElementById("btn");
+    button.onclick = () => console.log("Button clicked");
     button.click();
     ```
+
     **Output**: `Button clicked`
     **Explanation**: `onclick` triggers the event handler.
 
 75. **What will this code output?**
+
     ```js
-    const div = document.createElement('div');
-    div.style.color = 'red';
+    const div = document.createElement("div");
+    div.style.color = "red";
     document.body.appendChild(div);
     console.log(getComputedStyle(div).color);
     ```
+
     **Output**: `rgb(255, 0, 0)`
     **Explanation**: `getComputedStyle` returns the computed style.
 
 76. **What does this code print?**
+
     ```js
-    document.body.innerHTML = '<ul><li>Item 1</li><li>Item 2</li></ul>';
-    const items = document.querySelectorAll('li');
-    items.forEach(item => console.log(item.textContent));
+    document.body.innerHTML = "<ul><li>Item 1</li><li>Item 2</li></ul>";
+    const items = document.querySelectorAll("li");
+    items.forEach((item) => console.log(item.textContent));
     ```
+
     **Output**:
+
     ```
     Item 1
     Item 2
     ```
+
     **Explanation**: `querySelectorAll` selects multiple elements.
 
 77. **What will this code output?**
+
     ```js
-    const div = document.createElement('div');
-    div.textContent = 'Hello World';
+    const div = document.createElement("div");
+    div.textContent = "Hello World";
     document.body.appendChild(div);
     div.remove();
     console.log(document.body.contains(div));
     ```
+
     **Output**: `false`
     **Explanation**: `remove` detaches the element from the DOM.
 
 78. **What does this code print?**
+
     ```js
     document.body.innerHTML = '<input type="text" id="input" value="default">';
-    const input = document.getElementById('input');
-    input.value = 'changed';
-    console.log(input.getAttribute('value'));
+    const input = document.getElementById("input");
+    input.value = "changed";
+    console.log(input.getAttribute("value"));
     ```
+
     **Output**: `default`
     **Explanation**: `getAttribute` returns the initial attribute value.
 
 79. **What will this code output?**
+
     ```js
     document.body.innerHTML = '<div id="test"></div>';
-    const div = document.getElementById('test');
-    div.setAttribute('data-test', 'value');
+    const div = document.getElementById("test");
+    div.setAttribute("data-test", "value");
     console.log(div.dataset.test);
     ```
+
     **Output**: `value`
     **Explanation**: `dataset` accesses `data-*` attributes.
 
 80. **What does this code print?**
     ```js
-    const p = document.createElement('p');
-    p.innerHTML = '<strong>Strong</strong>';
+    const p = document.createElement("p");
+    p.innerHTML = "<strong>Strong</strong>";
     document.body.appendChild(p);
-    console.log(p.querySelector('strong').innerHTML);
+    console.log(p.querySelector("strong").innerHTML);
     ```
     **Output**: `Strong`
     **Explanation**: `querySelector` selects nested elements.
@@ -2446,141 +2734,179 @@ console.log([{}] + []);
 ### Core JavaScript Concepts
 
 81. **What does this code print?**
+
     ```js
     console.log(typeof null);
     ```
+
     **Output**: `object`
     **Explanation**: `null` is considered an object due to a historical bug.
 
 82. **What is the result of this code?**
+
     ```js
     console.log(0.1 + 0.2 === 0.3);
     ```
+
     **Output**: `false`
     **Explanation**: Floating-point arithmetic can lead to precision issues.
 
 83. **What will this code output?**
+
     ```js
     console.log([1] == [1]);
     ```
+
     **Output**: `false`
     **Explanation**: Arrays are compared by reference, not value.
 
 84. **What does this code print?**
+
     ```js
-    console.log(1 + '1');
+    console.log(1 + "1");
     ```
+
     **Output**: `11`
     **Explanation**: `1` is coerced into a string, resulting in concatenation.
 
 85. **What will this code output?**
+
     ```js
-    console.log('5' - 2);
+    console.log("5" - 2);
     ```
+
     **Output**: `3`
     **Explanation**: The `-` operator converts the string to a number.
 
-86. **What does this
+86. \*\*What does this
 
- code print?**
-    ```js
+code print?**
+`js
     console.log(true + 1);
-    ```
-    **Output**: `2`
-    **Explanation**: `true` is coerced to `1` before addition.
+    `
+**Output**: `2`
+**Explanation\*\*: `true` is coerced to `1` before addition.
 
 87. **What will this code output?**
+
     ```js
     console.log([] + {});
     ```
+
     **Output**: `[object Object]`
     **Explanation**: `[]` is coerced to an empty string, `{}` to `[object Object]`.
 
 88. **What does this code print?**
+
     ```js
     console.log({} + []);
     ```
+
     **Output**: `0`
     **Explanation**: `{}` is interpreted as a block, `[]` is coerced to `0`.
 
 89. **What will this code output?**
+
     ```js
     console.log(NaN === NaN);
     ```
+
     **Output**: `false`
     **Explanation**: `NaN` is not equal to itself.
 
 90. **What does this code print?**
+
     ```js
     console.log(typeof typeof 1);
     ```
+
     **Output**: `string`
     **Explanation**: `typeof 1` is `number`, `typeof` of that is `string`.
 
 91. **What will this code output?**
+
     ```js
     console.log([1, 2] + [3, 4]);
     ```
+
     **Output**: `1,23,4`
     **Explanation**: Arrays are converted to strings and concatenated.
 
 92. **What does this code print?**
+
     ```js
-    console.log(1 + '2' + 3);
+    console.log(1 + "2" + 3);
     ```
+
     **Output**: `123`
     **Explanation**: The `+` operator performs string concatenation when one operand is a string.
 
 93. **What will this code output?**
+
     ```js
-    console.log(1 - '1');
+    console.log(1 - "1");
     ```
+
     **Output**: `0`
     **Explanation**: The `-` operator converts the string to a number.
 
 94. **What does this code print?**
+
     ```js
-    console.log(typeof [] === 'object');
+    console.log(typeof [] === "object");
     ```
+
     **Output**: `true`
     **Explanation**: Arrays are objects in JavaScript.
 
 95. **What will this code output?**
+
     ```js
     console.log([] == ![]);
     ```
+
     **Output**: `true`
     **Explanation**: `![]` is `false`, `[]` is coerced to `false`.
 
 96. **What does this code print?**
+
     ```js
     console.log([1] + [2]);
     ```
+
     **Output**: `12`
     **Explanation**: Arrays are converted to strings and concatenated.
 
 97. **What will this code output?**
+
     ```js
-    console.log({a: 1} + {b: 2});
+    console.log({ a: 1 } + { b: 2 });
     ```
+
     **Output**: `[object Object][object Object]`
     **Explanation**: Objects are coerced to strings and concatenated.
 
 98. **What does this code print?**
+
     ```js
-    console.log(2 + 3 + '4');
+    console.log(2 + 3 + "4");
     ```
+
     **Output**: `54`
     **Explanation**: Addition with a string converts the entire result to a string.
 
 99. **What will this code output?**
+
     ```js
     console.log(0.1 + 0.2);
     ```
+
     **Output**: `0.30000000000000004`
     **Explanation**: Floating-point arithmetic can cause precision issues.
 
-100. **What does this code print?**
+100.  **What does this code print?**
+
+
     ```js
     console.log([] == false);
     ```
@@ -2588,5 +2914,3 @@ console.log([{}] + []);
     **Explanation**: `[]` is coerced to a falsy value, but not `false`.
 
 ---
-
- 
