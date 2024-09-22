@@ -2022,9 +2022,8 @@ console.log([{}] + []);
     baz();
     `
 **Output**:
-`  baz
-    foo
- `
+`baz
+    foo`
 **Explanation**: `baz` prints `baz`, then calls `foo`.
 
 33. **What does this code print?**
@@ -2778,14 +2777,14 @@ console.log([{}] + []);
     **Output**: `3`
     **Explanation**: The `-` operator converts the string to a number.
 
-86. \*\*What does this
+86. **What does this code print?**
 
-code print?**
-`js
-    console.log(true + 1);
-    `
+```js
+console.log(true + 1);
+```
+
 **Output**: `2`
-**Explanation\*\*: `true` is coerced to `1` before addition.
+**Explanation**: `true` is coerced to `1` before addition.
 
 87. **What will this code output?**
 
@@ -2910,6 +2909,7 @@ code print?**
     ```js
     console.log([] == false);
     ```
+
     **Output**: `false`
     **Explanation**: `[]` is coerced to a falsy value, but not `false`.
 
