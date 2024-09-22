@@ -1686,7 +1686,13 @@ console.log([{}] + []);
 - `[] + {} + []` results in the empty string and object coercion to `[object Object]`.
 - `[{}] + []` results in `[object Object]`.
 
-### Arrays
+---
+
+---
+
+---
+
+# Arrays
 
 1. **What does this code print?**
 
@@ -1776,7 +1782,7 @@ console.log([{}] + []);
     **Output**: `1`
     **Explanation**: `findIndex` returns the index of the first element that satisfies the condition.
 
-### Objects
+# Objects
 
 11. **What does this code print?**
 
@@ -1874,7 +1880,7 @@ console.log([{}] + []);
     **Output**: `{a: 1, b: 2}`
     **Explanation**: `Object.assign` merges objects.
 
-### Functions
+# Functions
 
 21. **What does this code print?**
 
@@ -1993,7 +1999,7 @@ console.log([{}] + []);
     **Output**: `5`
     **Explanation**: Default value for `b` is used.
 
-### Call Stack
+# Call Stack
 
 31. **What does this code print?**
     ```js
@@ -2181,7 +2187,7 @@ console.log([{}] + []);
     ```
     **Explanation**: `foo` prints `foo`, then calls `bar`.
 
-### Promises
+# Promises
 
 41. **What does this code print?**
 
@@ -2294,7 +2300,7 @@ console.log([{}] + []);
     **Output**: `done` (after 2 seconds)
     **Explanation**: `Promise.all` waits for all promises to resolve.
 
-### Asynchronous Functions
+# Asynchronous Functions
 
 51. **What does this code print?**
 
@@ -2429,7 +2435,7 @@ console.log([{}] + []);
     **Output**: `error`
     **Explanation**: Errors are caught in `catch` block.
 
-### Event Phases
+# Phases of Event in js
 
 61. **What does this code print?**
 
@@ -2607,7 +2613,7 @@ console.log([{}] + []);
     ```
     **Explanation**: `stopPropagation` prevents bubbling.
 
-### DOM Manipulation
+# DOM Manipulation
 
 71. **What does this code print?**
 
@@ -2730,7 +2736,7 @@ console.log([{}] + []);
     **Output**: `Strong`
     **Explanation**: `querySelector` selects nested elements.
 
-### Core JavaScript Concepts
+# Core JavaScript Concepts
 
 81. **What does this code print?**
 
@@ -2933,9 +2939,5 @@ This behavior stems from JavaScript's type coercion rules when using the `==` op
 ```js
 console.log([] === false); // false
 ```
-
----
-
-This explanation helps the reader understand the nuances of JavaScript’s type coercion and how the `==` operator works differently from `===`.
 
 ---
