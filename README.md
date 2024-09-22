@@ -2903,14 +2903,39 @@ console.log(true + 1);
     **Output**: `0.30000000000000004`
     **Explanation**: Floating-point arithmetic can cause precision issues.
 
-100.  **What does this code print?**
+Here’s an improved version of the question with a more detailed explanation for your `README.md` context:
 
+---
 
-    ```js
-    console.log([] == false);
-    ```
+100. **What does this code print?**
 
-    **Output**: `false`
-    **Explanation**: `[]` is coerced to a falsy value, but not `false`.
+```js
+console.log([] == false);
+```
+
+**Output**: `true`
+
+**Explanation**:
+
+In JavaScript, the `==` operator performs type coercion, which means it tries to convert both sides to the same type before comparing them. Here's what happens step by step:
+
+1. **Array `[]` is converted to a primitive**:
+   - When comparing an empty array `[]` to a boolean, JavaScript tries to convert the array into a primitive value. The empty array is first converted to an empty string `''`.
+2. **Conversion of `[]` (now `''`) to a boolean**:
+
+   - After conversion, the `==` comparison converts both sides to numbers. `false` is converted to `0`, and `''` (empty string) is also converted to `0`.
+
+3. **Final Comparison**:
+   - The comparison becomes `0 == 0`, which is `true`.
+
+This behavior stems from JavaScript's type coercion rules when using the `==` operator. To avoid such quirks, it's recommended to use the strict equality operator `===`, which doesn't perform type coercion.
+
+```js
+console.log([] === false); // false
+```
+
+---
+
+This explanation helps the reader understand the nuances of JavaScript’s type coercion and how the `==` operator works differently from `===`.
 
 ---
